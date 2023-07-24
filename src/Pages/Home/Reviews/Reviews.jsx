@@ -1,39 +1,17 @@
-// const collegeReviews = [
-//   {
-//     college: "College A",
-//     review:
-//       "Great college with excellent faculty and facilities. Highly recommended!",
-//     user: "John Doe",
-//   },
-//   {
-//     college: "College B",
-//     review:
-//       "I had an amazing experience at this college. The campus is beautiful!",
-//     user: "Jane Smith",
-//   },
-//   {
-//     college: "College c",
-//     review:
-//       "I had an amazing experience at this college. The campus is beautiful!",
-//     user: "Jane Smith",
-//   },
-// ];
-
 import { useEffect, useState } from "react";
 
 const Reviews = () => {
   const [review, setReview] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/review")
+    fetch("https://college-function-server.vercel.app/review")
       .then((res) => res.json())
       .then((data) => {
         setReview(data);
       });
   }, []);
 
-  console.log(review)  
-  
+  // console.log(review)
 
   return (
     <section className="py-12 bg-gray-100">
